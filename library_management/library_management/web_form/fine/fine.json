@@ -1,0 +1,170 @@
+{
+ "allow_comments": 0,
+ "allow_delete": 0,
+ "allow_edit": 0,
+ "allow_incomplete": 0,
+ "allow_multiple": 0,
+ "allow_print": 0,
+ "anonymous": 0,
+ "apply_document_permissions": 0,
+ "button_label": "Save",
+ "condition_json": "[]",
+ "creation": "2025-10-16 14:34:59.078039",
+ "doc_type": "Fine",
+ "docstatus": 0,
+ "doctype": "Web Form",
+ "idx": 0,
+ "is_standard": 1,
+ "list_columns": [
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "label": "Member"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "book",
+   "fieldtype": "Link",
+   "label": "Book"
+  },
+  {
+   "fieldname": "column_break_zfya",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Autocomplete",
+   "label": "Reason"
+  },
+  {
+   "fieldname": "date_of_fine",
+   "fieldtype": "Date",
+   "label": "Date of fine"
+  },
+  {
+   "fieldname": "paid",
+   "fieldtype": "Check",
+   "label": "Paid"
+  }
+ ],
+ "list_title": "Library Fine list",
+ "login_required": 1,
+ "max_attachment_size": 0,
+ "modified": "2025-10-16 14:35:04.098146",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "fine",
+ "owner": "Administrator",
+ "published": 1,
+ "route": "fine",
+ "show_attachments": 0,
+ "show_list": 1,
+ "show_sidebar": 0,
+ "title": "Fine",
+ "web_form_fields": [
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "hidden": 0,
+   "label": "Member",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "Library Member",
+   "precision": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "hidden": 0,
+   "label": "Name",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "book",
+   "fieldtype": "Link",
+   "hidden": 0,
+   "label": "Book",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "Books",
+   "precision": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "column_break_zfya",
+   "fieldtype": "Column Break",
+   "hidden": 0,
+   "label": "",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "hidden": 0,
+   "label": "Amount",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "date_of_fine",
+   "fieldtype": "Date",
+   "hidden": 0,
+   "label": "Date of fine",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "default": "0",
+   "fieldname": "paid",
+   "fieldtype": "Check",
+   "hidden": 0,
+   "label": "Paid",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  }
+ ]
+}
