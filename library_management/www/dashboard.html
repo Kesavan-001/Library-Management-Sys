@@ -1,0 +1,100 @@
+
+
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container mt-5">
+  <h2 class="mb-4">Library Dashboard</h2>
+
+  <div class="row text-center mb-4">
+    <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>Members</h5><h2>{{ total_members }}</h2></div></div>
+    <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>Books</h5><h2>{{ total_books }}</h2></div></div>
+    <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>Fines</h5><h2>{{ total_fines }}</h2></div></div>
+    <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>Transactions</h5><h2>{{ total_transactions }}</h2></div></div>
+  </div>
+
+  <h4>👤 Library Members</h4>
+  <table class="table table-striped mt-2 mb-5">
+    <thead>
+      <tr>
+        <th>ID</th><th>Name</th><th>Email</th><th>Mobile</th><th>Start</th><th>End</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for m in members %}
+      <tr>
+        <td>{{ m.name }}</td>
+        <td>{{ m.name1 }}</td>
+        <td>{{ m.email }}</td>
+        <td>{{ m.mobile_no }}</td>
+        <td>{{ m.membership_start_date }}</td>
+        <td>{{ m.membership_end_date }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h4>Books</h4>
+  <table class="table table-striped mt-2 mb-5">
+    <thead>
+      <tr>
+        <th>ID</th><th>Book Name</th><th>Author</th><th>Publisher</th><th>Copies</th><th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for b in books %}
+      <tr>
+        <td>{{ b.name }}</td>
+        <td>{{ b.book_name }}</td>
+        <td>{{ b.author }}</td>
+        <td>{{ b.publisher }}</td>
+        <td>{{ b.available_copies }}</td>
+        <td>{{ b.status }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h4>Fines</h4>
+  <table class="table table-striped mt-2 mb-5">
+    <thead>
+      <tr>
+        <th>ID</th><th>Member</th><th>Book</th><th>Amount</th><th>Reason</th><th>Date</th><th>Paid</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for f in fines %}
+      <tr>
+        <td>{{ f.name }}</td>
+        <td>{{ f.member }}</td>
+        <td>{{ f.book }}</td>
+        <td>{{ f.amount }}</td>
+        <td>{{ f.reason }}</td>
+        <td>{{ f.date_of_fine }}</td>
+        <td>{% if f.paid %}✅{% else %}❌{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h4>Membership Transactions</h4>
+  <table class="table table-striped mt-2">
+    <thead>
+      <tr>
+        <th>ID</th><th>Member</th><th>Start</th><th>End</th><th>Paid</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for t in transactions %}
+      <tr>
+        <td>{{ t.name }}</td>
+        <td>{{ t.member }}</td>
+        <td>{{ t.start_date }}</td>
+        <td>{{ t.end_date }}</td>
+        <td>{% if t.paid %}✅{% else %}❌{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -37,12 +37,16 @@ frappe.ui.form.on("Book Issue", {
                         console.log("ok")
 
                     }
+                    else if(issue <= start){
+                        frappe.throw("Give Me valid Date")
+                    }
                     else{
-                        frm.add_custom_button("Buy Membership",()=>{
+                            frm.add_custom_button("Buy Membership",()=>{
                             frappe.new_doc("Membership Transaction",{
                                 member:frm.doc.member
                             })
                         })
+                        frappe.throw(`Membership Expired from ${end}`)
                     }
                     
                 }
