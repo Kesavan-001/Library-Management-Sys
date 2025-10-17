@@ -8,7 +8,7 @@ def get_context(context):
     )
     context.books = frappe.get_all(
         "Books",
-        fields=["name", "title", "author", "status", "publisher", "available_copies"],
+        fields=["name", "title", "author", "status", "publisher", "available_copies", "cover_image"],
         order_by="creation desc"
     )
 

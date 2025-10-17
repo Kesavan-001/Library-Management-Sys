@@ -13,7 +13,7 @@
     <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>Transactions</h5><h2>{{ total_transactions }}</h2></div></div>
   </div>
 
-  <h4>👤 Library Members</h4>
+  <!-- <h4>👤 Library Members</h4>
   <table class="table table-striped mt-2 mb-5">
     <thead>
       <tr>
@@ -32,30 +32,31 @@
       </tr>
       {% endfor %}
     </tbody>
-  </table>
+  </table> -->
 
   <h4>Books</h4>
-  <table class="table table-striped mt-2 mb-5">
-    <thead>
-      <tr>
-        <th>ID</th><th>Book Name</th><th>Author</th><th>Publisher</th><th>Copies</th><th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for b in books %}
-      <tr>
-        <td>{{ b.name }}</td>
-        <td>{{ b.book_name }}</td>
-        <td>{{ b.author }}</td>
-        <td>{{ b.publisher }}</td>
-        <td>{{ b.available_copies }}</td>
-        <td>{{ b.status }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
 
-  <h4>Fines</h4>
+  <div class="bg-dark w-auto h-45 rounded">
+    <div class="container m-4 p-4 flex justifiy-center">
+        {% for b in books %}
+        <div class="card m-4 p-4 bg-light w-25 text-center">
+            <img src="{{ b.cover_image }}" alt="{{ b.name }} " class="vh-25 rounded">
+            <h5 class="p-4">{{ b.name }}</h5>
+            <p>{{ b.author }}</p>
+            <p>{{ b.publisher }}</p>
+            <p>{{ b.available_copies }}</p>
+            <p>{{ b.status }}</p>
+
+            <div>
+                <button class="btn btn-primary text-white"><a href="/book-issue">Get Book</a></button>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+
+  <!-- <h4>Fines</h4>
   <table class="table table-striped mt-2 mb-5">
     <thead>
       <tr>
@@ -75,9 +76,9 @@
       </tr>
       {% endfor %}
     </tbody>
-  </table>
+  </table> -->
 
-  <h4>Membership Transactions</h4>
+  <!-- <h4>Membership Transactions</h4>
   <table class="table table-striped mt-2">
     <thead>
       <tr>
@@ -95,6 +96,6 @@
       </tr>
       {% endfor %}
     </tbody>
-  </table>
+  </table> -->
 </div>
 {% endblock %}
