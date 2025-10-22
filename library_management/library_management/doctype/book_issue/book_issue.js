@@ -1,6 +1,3 @@
-// Copyright (c) 2025, Kesavan and contributors
-// For license information, please see license.txt
-
 frappe.ui.form.on("Book Issue", {
 	refresh: function(frm) {
 
@@ -54,4 +51,5 @@ frappe.ui.form.on("Book Issue", {
         })
 
     }
+    
 })
