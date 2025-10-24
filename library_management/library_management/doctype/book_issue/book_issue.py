@@ -4,6 +4,13 @@ from frappe.utils import getdate
 
 class BookIssue(Document):
     def validate(self):
+        self.calculate_fine_and_update_status()
+
+    def on_change(self):
+        self.calculate_fine_and_update_status()
+       
+    def calculate_fine_and_update_status(self):
+
         if not self.return_date:
             self.status = "Issued"           
         elif self.return_date and self.due_date:
@@ -15,6 +22,7 @@ class BookIssue(Document):
                 fine = fine * 10
                 self.custom_fine = fine
                 self.status = "Overdue"
+                print(fine)
             elif return_date == due_date: 
                 self.status = "Returned"
         
@@ -33,7 +41,6 @@ class BookIssue(Document):
                 balance = avai + 1
                 frappe.db.set_value("Books",self.book,"available_copies",balance)
              
-                
     def before_save(self):
         
         doc = frappe.get_doc("Library Member",self.member)

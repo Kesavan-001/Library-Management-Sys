@@ -27,7 +27,7 @@ def get_context(getdata):
 
     getdata.bookissue = frappe.get_all(
         "Book Issue",
-        fields=["name","member","custom_name","book","issue_date"],
+        fields=["name","member","custom_name","book","issue_date","due_date","status"],
         order_by="creation desc"
     )
 
